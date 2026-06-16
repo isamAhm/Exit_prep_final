@@ -14,7 +14,15 @@ import { slugify } from "../lib/utils";
 import { NOTES } from "../lib/notes-content";
 import { DEFAULT_USER_EMAIL } from "../lib/constants";
 
-const prisma = new PrismaClient();
+// Use the direct (unpooled) connection for seeding — avoids pool timeout
+// when upserting thousands of rows in sequence.
+const prisma = new PrismaClient({
+  datasources: {
+    db: {
+      url: process.env.DATABASE_URL_UNPOOLED ?? process.env.DATABASE_URL,
+    },
+  },
+});
 
 interface BPTopic { name: string; items: number; bloom: Record<string, number> }
 interface BPCourse {
