@@ -252,7 +252,7 @@ export async function buildPaperExam(userId: number, paperExamId: number, isPrac
   const ids: number[] = JSON.parse(paperExam.questionIds);
   return persist(
     userId, "paper", paperExam.name,
-    ids, 150 * 60, // 150 minutes standard mock time
+    shuffle(ids), 150 * 60, // 150 minutes standard mock time
     { paperExamId, isPractice, totalItems: ids.length },
   );
 }
