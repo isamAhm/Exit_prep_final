@@ -130,8 +130,8 @@ A premium, focused SaaS feel (inspired by Linear / Vercel / Raycast), not a typi
 
 ## Notes on integrity
 
-- No runtime LLM calls anywhere. Explanations are templated from the verified correct answer
-  + the linked learning outcome; the "why" is delivered through the authored notes.
-- The question bank ships with no explanations; difficulty and topic tags are inferred
+- No runtime LLM calls anywhere yet. But LLM integration is in progress. Explanations are templated from the verified correct answer
+  + the linked learning outcome; the "why" is delivered through the authored notes for now.
+- The question bank ships with no explanations; Only the exit mock model exam has the explanation for now. difficulty and topic tags are inferred
   deterministically and **recalibrate as you answer** (historical success rate feeds back in
   via the mastery layer).
