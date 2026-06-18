@@ -46,7 +46,7 @@ Write a concise, educational explanation (2-4 sentences max) explaining *why* ${
       model: "gemini-2.5-flash",
       contents: prompt,
     });
-    return response.text.trim();
+    return response.text ? response.text.trim() : "";
   } catch (error) {
     throw error;
   }
